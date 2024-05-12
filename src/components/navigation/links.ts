@@ -1,7 +1,7 @@
 export default [
     {
         label: 'gallery',
-        path: '/',
+        path: '/gallery',
     },
     {
         label: 'blog',
