@@ -1,4 +1,4 @@
-import Navbar from "@/components/navigation/navbar";
+import PageHeader from "@/components/headings/pageheader";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -7,11 +7,23 @@ export const metadata: Metadata = {
     "We are a team of passionate developers, designers, and creators who love to build things that matter.",
 };
 
-export default function About() {
+const headerContent = {
+  title: "About",
+  pronunciation: "/əˈbaʊt/",
+  type: "preposition",
+  definition: [
+    {
+      meaning: "on the subject of; concerning.",
+      example: "a book about the film",
+      similar: ["regarding", "concerning", "with reference to", "relating to"],
+    },
+  ],
+};
+
+export default function Contact() {
   return (
-    <div className="container mx-auto px-5 lg:px-20 flex flex-col h-screen py-10">
-      <Navbar />
-      <h1 className="text-9xl font-bold mt-20 uppercase">About</h1>
+    <div className="mt-28">
+      <PageHeader content={headerContent} />
     </div>
   );
 }
