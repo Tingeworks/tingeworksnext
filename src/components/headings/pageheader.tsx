@@ -22,7 +22,7 @@ export default function PageHeader({
           <li key={index} className="mt-3 pl-2">
             {def.meaning}
             <br />
-            <span className="text-gray-400">"{def.example}"</span>
+            <span className="text-gray-400">{def.example}</span>
             <br />
             <span className="text-green-600">Similar: </span>
             {def.similar.map((sim, index) => (
