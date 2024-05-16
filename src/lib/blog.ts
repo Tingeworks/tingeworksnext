@@ -15,6 +15,32 @@ async function getBlogs(query?: string): Promise<BlogResponse> {
 }
 
 
+
+
+
+
+// Get through Slug
+async function getBlog(slug: string): Promise<BlogResponse> {
+    const res = await fetch(`https://admin.tingeworks.com/api/blogs?filters[slug][$eq]=${slug}`)
+
+    if (!res.ok) {
+        // This will activate the closest `error.js` Error Boundary
+        return {
+            data: null,
+            meta: null
+        }
+    }
+
+    const data = await res.json()
+    console.log(data)
+    return data
+
+}
+
+
+
+
 export {
-    getBlogs
+    getBlogs,
+    getBlog
 }
