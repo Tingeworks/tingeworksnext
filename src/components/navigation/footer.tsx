@@ -48,7 +48,7 @@ export default function Footer() {
                     width="28"
                     height="28"
                     viewBox="0 0 24 24"
-                    stroke-width="1.5"
+                    strokeWidth="1.5"
                     stroke="#00abfb"
                     fill="none"
                     strokeLinecap="round"
