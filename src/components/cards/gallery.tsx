@@ -10,6 +10,7 @@ interface GalleryCardProps {
     url: string;
   }[];
   image: string;
+  slug: string;
 }
 
 export default function GalleryCard({
@@ -17,9 +18,13 @@ export default function GalleryCard({
   description,
   techStack,
   image,
+  slug,
 }: GalleryCardProps): JSX.Element {
   return (
-    <div className="bg-gray-900 flex flex-col lg:flex-row transition-transform cursor-pointer active:scale-95 shadow hover:shadow-lg">
+    <Link
+      href={`/gallery/${slug}`}
+      className="bg-gray-900 flex flex-col lg:flex-row transition-transform cursor-pointer active:scale-95 shadow hover:shadow-lg"
+    >
       <div className="flex-1">
         <Image
           src={`https://admin.tingeworks.com${image}`}
@@ -47,6 +52,6 @@ export default function GalleryCard({
           ))}
         </ul>
       </div>
-    </div>
+    </Link>
   );
 }

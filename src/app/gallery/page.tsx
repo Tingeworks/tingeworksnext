@@ -45,6 +45,7 @@ export default async function Gallery() {
           projects.data.map((project, index) => (
             <GalleryCard
               key={index}
+              slug={project.attributes.slug}
               title={project.attributes.name}
               description={project.attributes.description}
               image={project.attributes.preview.data.attributes.url}

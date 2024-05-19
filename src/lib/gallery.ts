@@ -21,7 +21,7 @@ async function getProjects(query?: string): Promise<ProjectResponse> {
 
 // Get through Slug
 async function getProject(slug: string): Promise<ProjectResponse> {
-    const res = await fetch(`https://admin.tingeworks.com/api/blogs?filters[slug][$eq]=${slug}`)
+    const res = await fetch(`https://admin.tingeworks.com/api/projects?filters[slug][$eq]=${slug}&populate=*`)
 
     if (!res.ok) {
         // This will activate the closest `error.js` Error Boundary

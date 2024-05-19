@@ -17,6 +17,7 @@ interface Attributes {
     content: Content[];
     techstack: Techstack[];
     preview: Preview;
+    slug: string;
 }
 
 interface Content {
@@ -27,6 +28,7 @@ interface Content {
 interface ContentChild {
     type: string;
     text: string;
+    bold?: boolean;
 }
 
 interface Techstack {
