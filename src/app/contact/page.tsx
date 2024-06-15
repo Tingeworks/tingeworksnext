@@ -9,15 +9,6 @@ export const metadata: Metadata = {
 const headerContent = {
   title: "Contact",
   pronunciation: "/ˈkɒntakt/",
-  type: "noun",
-  definition: [
-    {
-      meaning:
-        "communicate with (someone), typically in order to give or receive information.",
-      example: "anyone with any information should contact Darlington police",
-      similar: ["get in touch with", "communicate with", "approach"],
-    },
-  ],
 };
 
 export default function Contact() {

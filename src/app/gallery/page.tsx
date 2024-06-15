@@ -15,14 +15,6 @@ export const metadata: Metadata = {
 const headerContent = {
   title: "Gallery",
   pronunciation: "/ˈɡal(ə)ri/",
-  type: "noun",
-  definition: [
-    {
-      meaning: "a room or building for the display or sale of works of art.",
-      example: "an art gallery",
-      similar: ["exhibition room", "display room", "art gallery", "museum"],
-    },
-  ],
 };
 
 export default async function Gallery() {

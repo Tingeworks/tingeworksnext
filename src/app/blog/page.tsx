@@ -13,15 +13,6 @@ export const metadata: Metadata = {
 const headerContent = {
   title: "Blog",
   pronunciation: "/blɒɡ/",
-  type: "noun",
-  definition: [
-    {
-      meaning:
-        "a regularly updated website or web page, typically one run by an individual or small group, that is written in an informal or conversational style.",
-      example: "many travel bloggers write about their trips",
-      similar: ["weblog", "web log", "online journal", "web diary"],
-    },
-  ],
 };
 
 export default async function Page() {
