@@ -31,7 +31,6 @@ export const metadata: Metadata = {
     images: "/website-meta-preview-image.jpg",
   },
 
-  icons: "/tingeworks.svg",
   alternates: {
     canonical: "/",
     languages: {

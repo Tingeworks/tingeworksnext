@@ -1,7 +1,7 @@
 "use client";
-import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   gsap.registerPlugin(useGSAP);
@@ -21,10 +21,41 @@ export default function Home() {
     });
   });
 
+  const [targetAudience, setTargetAudience] = useState("all");
+
+  const targetAudienceList = [
+    "all",
+    "humans",
+    "spiders",
+    "magnito",
+    "robots",
+    "aliens",
+    "ghosts",
+    "vampires",
+    "werewolves",
+    "zombies",
+    "mutants",
+    "superhumans",
+  ];
+
+  useEffect(() => {
+    //Implementing the setInterval method
+    const interval = setInterval(() => {
+      setTargetAudience(
+        targetAudienceList[
+          Math.floor(Math.random() * (targetAudienceList.length - 0)) + 0
+        ]
+      );
+    }, 2000);
+
+    //Clearing the interval
+    return () => clearInterval(interval);
+  }, [targetAudience]);
+
   return (
     <div className="flex flex-col h-screen justify-center">
       <div>
-        <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl my-5">
+        <h1 className="text-3xl sm:text-4xl  md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl my-5">
           <span className="animated-text-modes">
             <span className="letter">F</span>
             <span className="letter">i</span>
@@ -93,13 +124,7 @@ export default function Home() {
             <span className="letter">k</span>
             <span className="letter">s</span>
             <span className="letter"> </span>
-            <span className="letter">f</span>
-            <span className="letter">o</span>
-            <span className="letter">r</span>
-            <span className="letter"> </span>
-            <span className="letter">a</span>
-            <span className="letter">l</span>
-            <span className="letter">l</span>
+            {targetAudience != "" ? `for ${targetAudience}` : ""}
           </span>
           .
         </h1>

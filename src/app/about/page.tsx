@@ -44,6 +44,11 @@ const teammates = [
     role: "Backend Developer",
     image: "/teammates/jarif-ihtisum.jpg",
   },
+  {
+    name: "Asif Ikbal Mir",
+    role: "Marketing",
+    image: "/teammates/asif-ikbal.jpg",
+  },
 ];
 
 export default function Contact() {
