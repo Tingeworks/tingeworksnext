@@ -55,7 +55,12 @@ export default function Home() {
   return (
     <div className="flex flex-col h-screen justify-center">
       <div>
-        <h1 className="text-3xl sm:text-4xl  md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl my-5">
+        <h1
+          aria-label="Fingers tentacles or telekinesis
+no matter what users use to surf the web,
+we develop software that works for everyone."
+          className="text-3xl sm:text-4xl  md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl my-5"
+        >
           <span className="animated-text-modes">
             <span className="letter">F</span>
             <span className="letter">i</span>

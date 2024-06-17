@@ -25,6 +25,7 @@ export default function Nav() {
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
+          aria-label="Toggle Mobile Menu"
         >
           <path
             strokeLinecap="round"

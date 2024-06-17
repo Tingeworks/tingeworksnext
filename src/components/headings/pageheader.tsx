@@ -9,7 +9,7 @@ export default function PageHeader({
   return (
     <>
       <h1 className="text-4xl">{content.title}</h1>
-      <p>{content.pronunciation}</p>
+      <p aria-hidden="true">{content.pronunciation}</p>
     </>
   );
 }
