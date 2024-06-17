@@ -25,17 +25,17 @@ export default function Home() {
 
   const targetAudienceList = [
     "all",
-    "humans",
-    "spiders",
-    "magnito",
-    "robots",
-    "aliens",
-    "ghosts",
-    "vampires",
-    "werewolves",
-    "zombies",
-    "mutants",
-    "superhumans",
+    "humans 🙎‍♂️",
+    "spiders 🕷️",
+    "magnito 🧲",
+    "robots 🤖",
+    "aliens 👽",
+    "ghosts 👻",
+    "vampires 🧛‍♂️",
+    "werewolves 🐺",
+    "zombies 🧟‍♂️",
+    "mutants 🧬",
+    "superhumans 🦸‍♂️",
   ];
 
   useEffect(() => {
