@@ -21,32 +21,63 @@ export default function Home() {
     });
   });
 
-  const [targetAudience, setTargetAudience] = useState("all");
+  const [targetAudience, setTargetAudience] = useState([
+    "a",
+    "l",
+    "l",
+    ".",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+  ]);
 
   const targetAudienceList = [
-    "all",
-    "humans 🙎‍♂️",
-    "spiders 🕷️",
-    "magnito 🧲",
-    "robots 🤖",
-    "aliens 👽",
-    "ghosts 👻",
-    "vampires 🧛‍♂️",
-    "werewolves 🐺",
-    "zombies 🧟‍♂️",
-    "mutants 🧬",
-    "superhumans 🦸‍♂️",
+    ["a", "l", "l", ".", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+    ["h", "u", "m", "a", "n", "s", ".", " ", " ", " ", " ", " ", " ", " "],
+    ["s", "p", "i", "d", "e", "r", "s", ".", " ", " ", " ", " ", " ", " "],
+    ["m", "a", "g", "n", "i", "t", "o", ".", " ", " ", " ", " ", " ", " "],
+    ["a", "l", "i", "e", "n", "s", ".", " ", " ", " ", " ", " ", " ", " "],
+    ["g", "h", "o", "s", "t", "s", ".", " ", " ", " ", " ", " ", " ", " "],
+    ["v", "a", "m", "p", "i", "r", "e", "s", ".", " ", " ", " ", " ", " "],
+    ["w", "e", "r", "e", "w", "o", "l", "v", "e", "s", ".", " ", " ", " "],
+    ["z", "o", "m", "b", "i", "e", "s", ".", " ", " ", " ", " ", " ", " "],
+    ["m", "u", "t", "a", "n", "t", "s", ".", " ", " ", " ", " ", " ", " "],
+    ["s", "u", "p", "e", "r", "h", "u", "m", "a", "n", "s", ".", " ", " "],
   ];
 
   useEffect(() => {
     //Implementing the setInterval method
     const interval = setInterval(() => {
-      setTargetAudience(
-        targetAudienceList[
-          Math.floor(Math.random() * (targetAudienceList.length - 0)) + 0
-        ]
-      );
-    }, 2000);
+      gsap.to(".animated-text-for > .letter", {
+        duration: 1,
+        opacity: 0,
+        stagger: 0.1,
+        ease: "power3.inOut",
+        onComplete: () => {
+          setTargetAudience(
+            targetAudienceList[
+              Math.floor(Math.random() * (targetAudienceList.length - 0)) + 0
+            ]
+          );
+
+          setTimeout(() => {
+            gsap.to(".animated-text-for > .letter", {
+              duration: 1,
+              opacity: 1,
+              stagger: 0.1,
+              ease: "power3.inOut",
+            });
+          }, 100);
+        },
+      });
+    }, 2500);
 
     //Clearing the interval
     return () => clearInterval(interval);
@@ -129,9 +160,19 @@ we develop software that works for everyone."
             <span className="letter">k</span>
             <span className="letter">s</span>
             <span className="letter"> </span>
-            {targetAudience != "" ? `for ${targetAudience}` : ""}
+            <span>for </span>
+            <span className="animated-text-for relative">
+              {targetAudience.length > 0
+                ? targetAudience.map((letter, key) => {
+                    return (
+                      <span key={key} className="letter">
+                        {letter}
+                      </span>
+                    );
+                  })
+                : ""}
+            </span>
           </span>
-          .
         </h1>
       </div>
     </div>
